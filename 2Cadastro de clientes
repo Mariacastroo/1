@@ -1,0 +1,57 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+class Cliente implements Comparable<Cliente> {
+    private int codigo;
+    private String nome;
+    private String dataNascimento;
+    private String cpf;
+
+    public Cliente(int codigo, String nome, String dataNascimento, String cpf) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.cpf = cpf;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    @Override
+    public int compareTo(Cliente outroCliente) {
+        return Integer.compare(this.codigo, outroCliente.getCodigo());
+    }
+}
+
+public class CadastroClientes {
+    public static void main(String[] args) {
+        ArrayList<Cliente> listaClientes = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+
+        // Cadastro de clientes
+        System.out.println("Cadastro de Clientes");
+        System.out.println("Informe o número de clientes a serem cadastrados:");
+        int numClientes = scanner.nextInt();
+        scanner.nextLine(); // Consumir o \n pendente
+
+        for (int i = 0; i < numClientes; i++) {
+            System.out.println("Cliente " + (i + 1));
+            System.out.println("Informe o código:");
+            int codigo = scanner.nextInt();
+            scanner.nextLine(); // Consumir o \n pendente
+         
+
